@@ -37,7 +37,7 @@ To avoid this, there were several hours and a lot of energy invested in tuning t
 
 A lot of fine tuning was then done to further improve the performance. However, finding the correct number of epochs (to avoid a plateau) and the appropriate learning rate was the most significant. For instance, I started off with a relatively high learning rate, which triggered the early stopping metric as the improvement between epochs for the validation accuracy was minimal. The image below demonstrates this. 
 
-![Example Image](trial_run.png)
+![Example Image](trial_run1.png)
 
 Decreasing this by a factor of 10 made a huge improvement as I was able to hit the performance goal that I was initially hoping for (above 80%), with this specific model architecture. We can see the improvement visually in the image below. 
 
@@ -45,7 +45,7 @@ Decreasing this by a factor of 10 made a huge improvement as I was able to hit t
 
 Just to make sure that I am not missing out on any potential improvements, I decreased the learning rate again by a factor of 10. With this change, I noticed a very slow improvement and sporadic results so this was not ideal for the large number of images that this model has to train on. increasing the epoch count to tackle this would only require more computation and time, which was not an ideal solution. For the result, we can take a look at the image below. 
 
-![Example Image](trial_run(1).png)
+![Example Image](trial_run2.png)
 
 To give the model one final push (and hopefully get it over the 85% mark), I wanted to try something different. For this approach, I thought that I would give the model more data to work with in the form of upscaling the images slightly. This was done based on one of the earliest observations. This was that the images that are being pre-processed are a little too blurry contributing to more noise. I did not actually believe that this step would make a noticeable difference but it did. The most apparent difference was that the model took longer to train (adding approximately 50ms for each step) but this was a compromise I welcomed as soon as I saw that the final model accuracy was over 85% (finally!) The final metrics can be seen in the figures that follow. 
 
